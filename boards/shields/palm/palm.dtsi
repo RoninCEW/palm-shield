@@ -5,6 +5,10 @@
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
     };
+    
+    physical_layout0: physical_layout_0 { 
+        transform = <&default_transform>;
+    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -42,9 +46,5 @@
             , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
-    };
-    
-    physical_layout0: physical_layout_0 { 
-        transform = <&default_transform>;
     };
 };
