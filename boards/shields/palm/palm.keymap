@@ -14,57 +14,57 @@
 
         default_layer {
             // -------------------------------------------------------------------
-            // |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  BSPC  |
-            // |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O     |
-            // |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  ESC   |
-            //             | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  |
+            // |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |
+            // |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |
+            //             | ESC | SPC | TAB |   | ENT | BSPC  | DEL |
             bindings = <
-            &kp Q &kp W &kp F &kp P &kp B         &kp J &kp L &kp U     &kp Y   &kp BSPC        // &kp SEMI
-            &kp A &kp R &kp S &kp T &kp G         &kp M &kp N &kp E     &kp I   &kp O           // &kp SQT
-            &kp Z &kp X &kp C &kp D &kp V         &kp K &kp H &kp COMMA &kp DOT &kp FSLH        // &kp ESC
-                    &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+            &kp Q       &kp W       &kp F        &kp P        &kp B         &kp J       &kp L        &kp U        &kp Y       &kp SEMI
+            &mt LCMD A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G         &kp M       &mt LSHFT N  &mt LCTRL E  &mt LALT I  &mt LCMD O
+            &kp Z       &kp X       &kp C        &kp D        &kp V         &kp K       &kp H        &kp COMMA    &kp DOT     &kp FSLH
+                                    &kp ESC      &lt 2 SPACE  &kp TAB       &lt 3 RET   &lt 1 BSPC   &kp DEL
             >;
         };
         
-        lower_layer {
+        navigation {
             // ------------------------------------------------------------------
-            // |     |  7  |  8  |  9  |     |   |     |     |     |     |     |
-            // |     |  4  |  5  |  6  |     |   |     | LFT |  UP | RGT |     |
-            // |     |  1  |  2  |  3  |     |   |     |     | DWN |     |     |
-            //             | GUI |     |  0  |   | ENT | BT  | ALT |
+            // |     |  7  |  8  |  9  |     |    |     | CUT  | COPY | PAST |     |
+            // |     |  4  |  5  |  6  |     |    |     | LEFT |  UP  | RIGT |     |
+            // |     |  1  |  2  |  3  |     |    |     | UNDO | DOWN | REDO |     |
+            //             |  .  |  0  |     |    |     |      |      |
             bindings = <
-            &trans  &kp N7  &kp N8  &kp N9  &trans         &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans         &trans  &kp LEFT  &kp UP  &kp RIGHT  &trans
-            &trans  &trans  &trans  &trans  &trans         &trans  &trans  &kp DOWN  &trans  &trans
-                         &kp LGUI  &trans  &kp N0     &kp RET  &mo 3   &kp RALT
-            >;
+            &trans  &kp N7       &kp N8        &kp N9        &trans         &trans  &kp K_CUT   &kp K_COPY  &kp K_PASTE  &trans
+            &trans  &mt LALT N4  &mt LCTRL N5  &mt LSHFT N6  &trans         &trans  &kp LEFT    &kp UP      &kp RIGHT    &trans
+            &trans  &kp N1       &kp N2        &kp N3        &trans         &trans  &kp K_UNDO  &kp DOWN    &kp K_REDO   &trans
+                                 &kp DOT       &kp N0        &trans         &trans  &trans      &trans
+            >; 
         };
 
-        raise_layer {
+        symbol {
             // ------------------------------------------------------------------
             // |  !  |  @  |  #  |  $  |  %  |   |     |     |  [  |  ]  |     |
-            // | "|" |  &  |  ;  |  =  |  _  |   |     |     |  (  |  )  |  \  |
+            // | "|" |  &  |  ;  |  =  |  _  |   |  <  |  >  |  (  |  )  |  \  |
             // |  /  |  *  |  +  |  -  |  ^  |   |     |     |  {  |  }  |     |
-            //             | GUI |     | TAB |   | ENT |     | ALT |
+            //             |     |     |     |   |     |     |     |
             bindings = <
-            &kp EXCL &kp AT    &kp HASH   &kp DLLR    &kp PRCNT      &trans &kp AMPS  &kp LBKT  &kp RBKT &trans
-            &kp PIPE &kp AMPS  &kp SEMI   &kp EQUAL   &kp UNDER      &trans &kp EQUAL &kp LPAR  &kp RPAR &kp BSLH
-            &kp FSLH &kp ASTRK &kp PLUS   &kp MINUS   &kp CARET      &trans &trans    &kp LBRC  &kp RBRC &trans
-                            &kp LGUI &trans   &kp TAB   &kp RET   &trans    &kp RALT
+            &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT      &trans   &trans  &kp LBKT  &kp RBKT  &trans
+            &kp PIPE  &kp AMPS   &kp SEMI  &kp EQUAL  &kp UNDER      &kp LT   &kp GT  &kp LPAR  &kp RPAR  &kp BSLH
+            &kp FSLH  &kp ASTRK  &kp PLUS  &kp MINUS  &kp CARET      &trans   &trans  &kp LBRC  &kp RBRC  &trans
+                                 &kp LGUI  &trans     &kp TAB        &kp RET  &trans  &kp RALT
             >;
         };
 
-        bt_layer {
+        bt {
             // ------------------------------------------------------------------
             // |     |     |     |     |       |   |     |     |     |     |     |
             // | BT1 | BT2 | BT3 | BT4 |  BT5  |   |     |     |     |     |     |
             // |     |     |     |     | BTCLR |   |     |     |     |     |     |
-            //             | GUI |     | SPC   |   | ENT |     | ALT |
+            //             |     |     |       |   |     |     |     |
             bindings = <
-            &trans         &trans       &trans         &trans         &trans            &trans &trans  &trans  &trans &trans
-            &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4      &trans &trans  &trans  &trans &trans
-            &trans         &trans       &trans         &trans         &bt BT_CLR        &trans &trans  &trans  &trans &trans
-                                                    &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+            &trans        &trans        &trans        &trans        &trans            &trans  &trans  &trans  &trans  &trans
+            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &trans  &trans  &trans  &trans  &trans
+            &trans        &trans        &trans        &trans        &bt BT_CLR        &trans  &trans  &trans  &trans  &trans
+                                        &trans        &trans        &trans            &trans  &trans  &trans
             >;
         };
     };
