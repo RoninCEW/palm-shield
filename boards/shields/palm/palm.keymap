@@ -14,7 +14,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
@@ -33,7 +33,7 @@
             &kp Q       &kp W       &kp F        &kp P        &kp B         &kp J       &kp L        &kp U        &kp Y       &kp SEMI
             &mt LCMD A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G         &kp M       &mt LSHFT N  &mt LCTRL E  &mt LALT I  &mt LCMD O
             &kp Z       &kp X       &kp C        &kp D        &kp V         &kp K       &kp H        &kp COMMA    &kp DOT     &kp FSLH
-                                    &kp ESC      &lt 2 SPACE  &kp TAB       &lt 3 RET   &lt 1 BSPC   &kp DEL
+                                    &kp ESC      &lt 1 SPACE  &kp TAB       &lt 3 RET   &lt 2 BSPC   &kp DEL
             >;
         };
         
@@ -58,10 +58,10 @@
             // |  /  |  *  |  +  |  -  |  ^  |   |  <  |  >  |  {  |  }  |     |
             //             |     |     |     |   |     |     |     |
             bindings = <
-            &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT      &trans   &kp GRAVE  &kp APOS  &kp DQT   &trans
-            &kp PIPE  &kp AMPS   &kp SEMI  &kp EQUAL  &kp UNDER      &kp LT   &kp GT     &kp LPAR  &kp RPAR  &kp BSLH
-            &kp FSLH  &kp ASTRK  &kp PLUS  &kp MINUS  &kp CARET      &trans   &trans     &kp LBRC  &kp RBRC  &trans
-                                 &kp LGUI  &trans     &kp TAB        &kp RET  &trans     &kp RALT
+            &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT      &trans    &kp GRAVE  &kp APOS  &kp DQT   &trans
+            &kp PIPE  &kp AMPS   &kp SEMI  &kp EQUAL  &kp UNDER      &kp LBKT  &kp RBKT     &kp LPAR  &kp RPAR  &kp BSLH
+            &kp FSLH  &kp ASTRK  &kp PLUS  &kp MINUS  &kp CARET      &kp LT    &kp GT     &kp LBRC  &kp RBRC  &trans
+                                 &trans    &trans     &trans         &trans    &trans     &trans
             >;
         };
 
