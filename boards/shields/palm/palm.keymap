@@ -13,7 +13,7 @@
         mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
@@ -53,15 +53,15 @@
 
         symbol {
             // ------------------------------------------------------------------
-            // |  !  |  @  |  #  |  $  |  %  |   |     |     |  [  |  ]  |     |
-            // | "|" |  &  |  ;  |  =  |  _  |   |  <  |  >  |  (  |  )  |  \  |
-            // |  /  |  *  |  +  |  -  |  ^  |   |     |     |  {  |  }  |     |
+            // |  !  |  @  |  #  |  $  |  %  |   |     |  `  |  '  |  "  |     |
+            // | "|" |  &  |  ;  |  =  |  _  |   |  [  |  ]  |  (  |  )  |  \  |
+            // |  /  |  *  |  +  |  -  |  ^  |   |  <  |  >  |  {  |  }  |     |
             //             |     |     |     |   |     |     |     |
             bindings = <
-            &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT      &trans   &trans  &kp LBKT  &kp RBKT  &trans
-            &kp PIPE  &kp AMPS   &kp SEMI  &kp EQUAL  &kp UNDER      &kp LT   &kp GT  &kp LPAR  &kp RPAR  &kp BSLH
-            &kp FSLH  &kp ASTRK  &kp PLUS  &kp MINUS  &kp CARET      &trans   &trans  &kp LBRC  &kp RBRC  &trans
-                                 &kp LGUI  &trans     &kp TAB        &kp RET  &trans  &kp RALT
+            &kp EXCL  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT      &trans   &kp GRAVE  &kp APOS  &kp DQT   &trans
+            &kp PIPE  &kp AMPS   &kp SEMI  &kp EQUAL  &kp UNDER      &kp LT   &kp GT     &kp LPAR  &kp RPAR  &kp BSLH
+            &kp FSLH  &kp ASTRK  &kp PLUS  &kp MINUS  &kp CARET      &trans   &trans     &kp LBRC  &kp RBRC  &trans
+                                 &kp LGUI  &trans     &kp TAB        &kp RET  &trans     &kp RALT
             >;
         };
 
