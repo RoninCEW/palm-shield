@@ -18,11 +18,11 @@
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
-        td: tap_dance {
+        semi_game: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp>, <&tog>;
+            bindings = <&kp SEMI>, <&tog 4>;
         };
     };
     
@@ -36,7 +36,7 @@
             // |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |
             //             | ESC | SPC | TAB |   | ENT | BSPC  | DEL |
             bindings = <
-            &kp Q       &kp W       &kp F        &kp P        &kp B         &kp J       &kp L        &kp U        &kp Y       &td SEMI 4
+            &kp Q       &kp W       &kp F        &kp P        &kp B         &kp J       &kp L        &kp U        &kp Y       &semi_game
             &mt LCMD A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G         &kp M       &mt LSHFT N  &mt LCTRL E  &mt LALT I  &mt LCMD O
             &kp Z       &kp X       &kp C        &kp D        &kp V         &kp K       &kp H        &kp COMMA    &kp DOT     &kp FSLH
                                     &kp ESC      &lt 1 SPACE  &kp TAB       &lt 3 RET   &lt 2 BSPC   &kp DEL
